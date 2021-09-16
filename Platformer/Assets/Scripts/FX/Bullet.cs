@@ -38,8 +38,7 @@ public class Bullet : MonoBehaviour
             enemyScript.TakeDamage(damage);
         }
 
-        //Instantiate(impactEffect, hit.poi);
-
+        Instantiate(impactEffect, this.transform.position, this.transform.rotation);
         Destroy(this.gameObject);
     }
 }

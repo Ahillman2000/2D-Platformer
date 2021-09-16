@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("something entered trigger");
+        //Debug.Log("something entered trigger");
 
         if (other.CompareTag("Player"))
         {

@@ -15,9 +15,11 @@ public class PlayerCombat : MonoBehaviour
 
     [SerializeField] Transform standingFirePoint;
     [SerializeField] Transform crouchingFirePoint;
-    [SerializeField] Transform upFirePoint;
+    [SerializeField] Transform upFirePoint = null;
 
     [SerializeField] private float knockbackForce = 10f;
+
+    public Transform spawnPoint;
 
     void Start()
     {
@@ -26,7 +28,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !PauseMenu.gameIsPaused)
         {
             Shoot();
         }
@@ -72,7 +74,8 @@ public class PlayerCombat : MonoBehaviour
 
         if (currentLives <= 0)
         {
-            Die();
+            //Die();
+            Respawn();
         }
     }
 
@@ -80,5 +83,11 @@ public class PlayerCombat : MonoBehaviour
     {
         // die
         Debug.Log("GAME OVER");
+    }
+
+    void Respawn()
+    {
+        this.transform.position = spawnPoint.position;
+        currentLives = maxLives;
     }
 }

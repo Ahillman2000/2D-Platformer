@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299503939146863795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0.04, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7087968147059128470}
@@ -301,7 +301,7 @@ MonoBehaviour:
   playerMovementScript: {fileID: 7087968147059128469}
   m_JumpForce: 250
   m_CrouchSpeed: 0
-  m_MovementSmoothing: 0.05
+  m_MovementSmoothing: 0
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
@@ -350,11 +350,12 @@ MonoBehaviour:
   rb: {fileID: 7087968147059128474}
   maxLives: 3
   currentLives: 0
-  projectile: {fileID: 3954611852259149371, guid: accb245f905560b45b586953113c0829, type: 3}
+  projectile: {fileID: 8970632859338076763, guid: 716a5fe004c32ba42bee3dd95f575d09, type: 3}
   standingFirePoint: {fileID: 7087968146071803388}
   crouchingFirePoint: {fileID: 2288170858982487335}
   upFirePoint: {fileID: 3567236374271207778}
   knockbackForce: 10
+  spawnPoint: {fileID: 0}
 --- !u!1 &8870783276300226321
 GameObject:
   m_ObjectHideFlags: 0

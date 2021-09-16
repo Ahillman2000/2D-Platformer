@@ -63,64 +63,67 @@ public class PlayerMovementScript : MonoBehaviour
 
     void Update()
     {
-        /*if (anim.GetBool("Up") == false && anim.GetBool("Ducking") == false)
+        if(!PauseMenu.gameIsPaused)
         {
+            /*if (anim.GetBool("Up") == false && anim.GetBool("Ducking") == false)
+            {
+                x_velocity = Input.GetAxisRaw("Horizontal") * runSpeed;
+            }
+            else
+            {
+                x_velocity = 0;
+            }*/
+
             x_velocity = Input.GetAxisRaw("Horizontal") * runSpeed;
-        }
-        else
-        {
-            x_velocity = 0;
-        }*/
 
-        x_velocity = Input.GetAxisRaw("Horizontal") * runSpeed;
+            if (x_velocity != 0)
+            {
+                anim.SetBool("Running", true);
+            }
+            else
+            {
+                anim.SetBool("Running", false);
+            }
 
-        if (x_velocity != 0)
-        {
-            anim.SetBool("Running", true);
-        }
-        else
-        {
-            anim.SetBool("Running", false);
-        }
+            if (Input.GetKey(KeyCode.W))
+            {
+                anim.SetBool("Up", true);
+            }
+            else
+            {
+                anim.SetBool("Up", false);
+            }
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            anim.SetBool("Up", true);
-        }
-        else
-        {
-            anim.SetBool("Up", false);
-        }
+            if (Input.GetKey(KeyCode.S))
+            {
+                crouch = true;
+                anim.SetBool("Crouching", true);
+            }
+            else
+            {
+                crouch = false;
+                anim.SetBool("Crouching", false);
+            }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            crouch = true;
-            anim.SetBool("Crouching", true);
-        }
-        else
-        {
-            crouch = false;
-            anim.SetBool("Crouching", false);
-        }
+            if (Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+                anim.SetTrigger("Jump");
+            }
 
-        if(Input.GetButtonDown("Jump"))
-        {
-            jump = true;
-            anim.SetTrigger("Jump");
-        }
+            /*if(Input.GetKey(KeyCode.C))
+            {
+                anim.SetBool("Clinging", true);
+            }
+            else
+            {
+                anim.SetBool("Clinging", false);
+            }*/
 
-        /*if(Input.GetKey(KeyCode.C))
-        {
-            anim.SetBool("Clinging", true);
+            /*if(Input.GetKeyDown(KeyCode.H))
+            {
+                anim.SetTrigger("Hurt");
+            }*/
         }
-        else
-        {
-            anim.SetBool("Clinging", false);
-        }*/
-
-        /*if(Input.GetKeyDown(KeyCode.H))
-        {
-            anim.SetTrigger("Hurt");
-        }*/
     }
 }

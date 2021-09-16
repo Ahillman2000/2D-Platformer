@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    [SerializeField] private Transform point1;
-    [SerializeField] private Transform point2;
-
     [SerializeField] private float speed = 1f;
 
+    [SerializeField] private Transform point1;
+    [SerializeField] private Transform point2;
     private int targetPoint = 2;
+    Vector2 targetPosition;
 
     void Start()
     {
@@ -31,11 +31,13 @@ public class EnemyPatrol : MonoBehaviour
 
         if(targetPoint == 1)
         {
-            this.transform.position = Vector2.MoveTowards(this.transform.position, point1.position, speed * Time.deltaTime);
+            targetPosition = new Vector2(point1.transform.position.x, this.transform.position.y);
+            this.transform.position = Vector2.MoveTowards(this.transform.position, targetPosition, speed * Time.deltaTime);
         }
         else if (targetPoint == 2)
         {
-            this.transform.position = Vector2.MoveTowards(this.transform.position, point2.position, speed * Time.deltaTime);
+            targetPosition = new Vector2(point2.transform.position.x, this.transform.position.y);
+            this.transform.position = Vector2.MoveTowards(this.transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
 }
