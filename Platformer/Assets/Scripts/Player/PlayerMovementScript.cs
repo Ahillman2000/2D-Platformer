@@ -35,7 +35,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer.Equals(10))
+        if(collision.gameObject)
         {
             onWall = true;
             Flip();

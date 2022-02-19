@@ -355,7 +355,7 @@ MonoBehaviour:
   crouchingFirePoint: {fileID: 2288170858982487335}
   upFirePoint: {fileID: 3567236374271207778}
   knockbackForce: 10
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 8433804760019033982, guid: 769f3f0c665cef541b64e1715ac390b6, type: 3}
 --- !u!1 &8870783276300226321
 GameObject:
   m_ObjectHideFlags: 0
